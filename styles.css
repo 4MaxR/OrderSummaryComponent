@@ -1,0 +1,182 @@
+:root {
+  /* Colors */
+
+  /* Primary */
+
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-black: hsl(0, 0%, 0%);
+
+  /* Neutral */
+
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+
+  /* font weights */
+
+  --fw-500: 500;
+  --fw-700: 700;
+  --fw-900: 900;
+  /* Space and padding */
+
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 2.5rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--dark-blue);
+  padding: var(--space-lg);
+  background-color: hsl(0, 0%, 94%);
+
+  @media screen and (max-width: 768px) {
+    padding: unset;
+    background-color: unset;
+  }
+}
+
+main {
+  background-image: url("../images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-color: var(--pale-blue);
+  margin-inline: auto;
+  position: relative;
+  max-width: 90rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    background-image: url("../images/pattern-background-mobile.svg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  max-width: 23.44rem;
+  border-radius: 0.9rem;
+  background-color: var(--clr-white);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  @media screen and (max-width: 768px) {
+    max-width: 22rem;
+  }
+}
+
+article {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-items: center;
+
+  h2 {
+    font-size: 24px;
+    font-weight: var(--fw-900);
+    color: var(--dark-blue);
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--desaturated-blue);
+    text-align: center;
+  }
+}
+
+.plan {
+  display: flex;
+  width: 100%;
+  padding: var(--space-sm);
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  background-color: var(--very-pale-blue);
+
+  .plan-info {
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  a {
+    font-size: 14px;
+    font-weight: var(--fw-700);
+    color: var(--bright-blue);
+  }
+
+  a:active {
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: var(--fw-700);
+    color: var(--dark-blue);
+  }
+}
+
+article button {
+  width: 100%;
+  padding: var(--space-xs);
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--bright-blue);
+  color: var(--clr-white);
+  font-size: 14px;
+  font-weight: var(--fw-700);
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+article button:active {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+article > a {
+  text-decoration: none;
+  color: var(--desaturated-blue);
+  font-size: 14px;
+  font-weight: var(--fw-700);
+}
+
+article > a:active {
+  color: var(--dark-blue);
+  font-weight: var(--fw-900);
+  transition: opacity 0.2s ease;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-top: var(--space-lg);
+  font-size: 14px;
+}
